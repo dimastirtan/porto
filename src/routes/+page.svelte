@@ -38,6 +38,12 @@
 	</div>
 </SectionWrapper>
 
+<SectionWrapper title="FAQ" id="faq">
+    <div class="faq-content">
+        <p>Frequently Asked Questions will be here soon!</p>
+    </div>
+</SectionWrapper>
+
 <SectionWrapper title="Contact" id="contact">
 	<div class="contact-content">
 		<p>Feel free to reach out or just a friendly chat!</p>
@@ -81,6 +87,11 @@
 	.contact-btn:hover {
 		background: #1d4ed8;
 	}
+
+    .faq-content {
+        text-align: center;
+        padding: 2rem 0;
+    }
 
     @media (max-width: 600px) {
         .contact-btn {
