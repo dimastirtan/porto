@@ -2,6 +2,16 @@
 	import favicon from '$lib/assets/favicon.ico';
 
 	let { children } = $props();
+	
+	let mobileMenuOpen = $state(false);
+	
+	function toggleMenu() {
+		mobileMenuOpen = !mobileMenuOpen;
+	}
+	
+	function closeMenu() {
+		mobileMenuOpen = false;
+	}
 </script>
 
 <svelte:head>
@@ -12,14 +22,29 @@
 <div class="page-wrapper">
 	<header class="navbar">
 		<div class="nav-container">
-			<a href="/" class="logo">-//-</a>
-			<nav>
+			<a href="/" class="logo" onclick={closeMenu}>-//-</a>
+			
+			<!-- Desktop Navigation -->
+			<nav class="desktop-nav">
 				<a href="#home">Home</a>
 				<a href="#about">About</a>
 				<a href="#projects">Projects</a>
 				<a href="#contact">Contact</a>
 			</nav>
+			
+			<!-- Mobile Menu Button -->
+			<button class="mobile-toggle" onclick={toggleMenu} aria-label="Toggle menu">
+				<span class="hamburger" class:open={mobileMenuOpen}></span>
+			</button>
 		</div>
+		
+		<!-- Mobile Navigation -->
+		<nav class="mobile-nav" class:open={mobileMenuOpen}>
+			<a href="#home" onclick={closeMenu}>Home</a>
+			<a href="#about" onclick={closeMenu}>About</a>
+			<a href="#projects" onclick={closeMenu}>Projects</a>
+			<a href="#contact" onclick={closeMenu}>Contact</a>
+		</nav>
 	</header>
 
 	<main>
@@ -73,27 +98,130 @@
 		font-weight: 700;
 		text-decoration: none;
 		color: #333;
+		z-index: 1001;
 	}
 
-	nav {
+	/* Desktop Navigation */
+	.desktop-nav {
 		display: flex;
 		gap: 2rem;
 	}
 
-	nav a {
+	.desktop-nav a {
 		text-decoration: none;
 		color: #555;
 		font-weight: 500;
 		transition: color 0.3s ease;
 	}
 
-	nav a:hover {
+	.desktop-nav a:hover {
+		color: #2563eb;
+	}
+
+	/* Mobile Toggle Button */
+	.mobile-toggle {
+		display: none;
+		background: none;
+		border: none;
+		cursor: pointer;
+		padding: 0.5rem;
+		z-index: 1001;
+	}
+
+	.hamburger {
+		display: block;
+		width: 24px;
+		height: 2px;
+		background: #333;
+		position: relative;
+		transition: background 0.3s ease;
+	}
+
+	.hamburger::before,
+	.hamburger::after {
+		content: '';
+		position: absolute;
+		width: 24px;
+		height: 2px;
+		background: #333;
+		left: 0;
+		transition: all 0.3s ease;
+	}
+
+	.hamburger::before {
+		top: -8px;
+	}
+
+	.hamburger::after {
+		top: 8px;
+	}
+
+	.hamburger.open {
+		background: transparent;
+	}
+
+	.hamburger.open::before {
+		top: 0;
+		transform: rotate(45deg);
+	}
+
+	.hamburger.open::after {
+		top: 0;
+		transform: rotate(-45deg);
+	}
+
+	/* Mobile Navigation */
+	.mobile-nav {
+		display: none;
+		flex-direction: column;
+		background: rgba(255, 255, 255, 0.98);
+		gap: 1rem;
+		max-height: 0;
+		overflow: hidden;
+		transition: max-height 0.3s ease, padding 0.3s ease;
+	}
+
+	.mobile-nav.open {
+		max-height: 300px;
+		padding: 1rem 2rem 2rem;
+	}
+
+	.mobile-nav a {
+		text-decoration: none;
+		color: #555;
+		font-weight: 500;
+		font-size: 1.1rem;
+		padding: 0.5rem 0;
+		border-bottom: 1px solid #eee;
+		transition: color 0.3s ease;
+	}
+
+	.mobile-nav a:hover {
 		color: #2563eb;
 	}
 
 	main {
 		flex: 1;
 		margin-top: 70px;
+	}
+
+	/* Responsive Styles */
+	@media (max-width: 768px) {
+		.desktop-nav {
+			display: none;
+		}
+
+		.mobile-toggle {
+			display: block;
+		}
+
+		.mobile-nav {
+			display: flex;
+		}
+
+		.nav-container {
+			padding: 1rem;
+		}
 	}
 </style>
 

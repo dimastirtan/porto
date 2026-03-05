@@ -81,5 +81,12 @@
 	.contact-btn:hover {
 		background: #1d4ed8;
 	}
+
+    @media (max-width: 600px) {
+        .contact-btn {
+            width: 100%;
+            margin-bottom: 1rem;
+        }
+    }
 </style>
 
