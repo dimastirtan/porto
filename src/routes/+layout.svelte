@@ -29,6 +29,7 @@
 				<a href="#home">Home</a>
 				<a href="#about">About</a>
 				<a href="#projects">Projects</a>
+				<a href="#faqs">FAQs</a>
 				<a href="#contact">Contact</a>
 			</nav>
 			
@@ -43,6 +44,7 @@
 			<a href="#home" onclick={closeMenu}>Home</a>
 			<a href="#about" onclick={closeMenu}>About</a>
 			<a href="#projects" onclick={closeMenu}>Projects</a>
+			<a href="#faqs" onclick={closeMenu}>FAQs</a>
 			<a href="#contact" onclick={closeMenu}>Contact</a>
 		</nav>
 	</header>
@@ -115,7 +117,7 @@
 	}
 
 	.desktop-nav a:hover {
-		color: #2563eb;
+		color: #FF5A5A;
 	}
 
 	/* Mobile Toggle Button */
@@ -197,7 +199,7 @@
 	}
 
 	.mobile-nav a:hover {
-		color: #2563eb;
+		color: #FF5A5A;
 	}
 
 	main {
