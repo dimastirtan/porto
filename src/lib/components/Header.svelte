@@ -11,8 +11,8 @@
 		<h1 class="name">{name}</h1>
 		<p class="tagline">{shortDescription}</p>
 		<div class="hero-cta">
-			<a href="#projects" class="btn btn-primary">View My Work</a>
-			<a href="#contact" class="btn btn-outline">Contact Me</a>
+			<a href="#projects" class="btn btn-primary">My Work</a>
+			<a href="#contact" class="btn btn-outline">Contact</a>
 		</div>
 		{#if children}
 			<div class="hero-extras">
