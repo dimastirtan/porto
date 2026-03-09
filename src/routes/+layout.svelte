@@ -1,5 +1,6 @@
 <script>
 	import favicon from '$lib/assets/favicon.ico';
+	import logo from '$lib/assets/logo.png';
 
 	let { children } = $props();
 	
@@ -22,7 +23,7 @@
 <div class="page-wrapper">
 	<header class="navbar">
 		<div class="nav-container">
-			<a href="/" class="logo" onclick={closeMenu}>-//-</a>
+			<a href="/" class="logo" onclick={closeMenu}><img src={logo} alt="Logo" /></a>
 			
 			<!-- Desktop Navigation -->
 			<nav class="desktop-nav">
@@ -94,13 +95,8 @@
 		justify-content: space-between;
 		align-items: center;
 	}
-
-	.logo {
-		font-size: 1.5rem;
-		font-weight: 700;
-		text-decoration: none;
-		color: #333;
-		z-index: 1001;
+	.logo img {
+		height: 40px;
 	}
 
 	/* Desktop Navigation */

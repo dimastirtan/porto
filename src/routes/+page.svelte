@@ -47,7 +47,7 @@
 <SectionWrapper title="Contact" id="contact">
 	<p style="text-align: center;">Feel free to reach out or just a friendly chat!</p>
 	<div class="contact-content">
-		<a href="https://www.instagram.com/direct/t/17844064031600426/" target="_blank" class="contact-btn">Instagram</a>
+		<a href="https://ig.me/m/dimastirtan" target="_blank" class="contact-btn">Instagram</a>
         <a href="https://m.me/iyaasd" target="_blank" class="contact-btn">Facebook</a>
         <a href="https://wa.me/+6281297514895" target="_blank" class="contact-btn">WhatsApp</a>
 		<a href="http://t.me/dimastirtan" target="_blank" class="contact-btn">Telegram</a>
