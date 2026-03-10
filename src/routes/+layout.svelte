@@ -23,7 +23,7 @@
 <div class="page-wrapper">
 	<header class="navbar">
 		<div class="nav-container">
-			<a href="/" class="logo" onclick={closeMenu}><img src={logo} alt="Logo" /></a>
+			<a href="/" class="logo" onclick={closeMenu}><img src={logo} alt="Logo" /><span><i>imas</i></span></a>
 			
 			<!-- Desktop Navigation -->
 			<nav class="desktop-nav">
@@ -61,6 +61,7 @@
 		padding: 0;
 		box-sizing: border-box;
 		scrollbar-width: none;
+		scroll-behavior: smooth;
 	}
 
 	:global(body) {
@@ -95,8 +96,18 @@
 		justify-content: space-between;
 		align-items: center;
 	}
-	.logo img {
-		height: 40px;
+
+	.logo {
+		display: inline-flex;
+		align-items: center;
+		text-decoration: none;
+	}
+
+	.logo span {
+		font-size: 1.75rem;
+		font-weight: 700;
+		color: #333;
+		font-family: cursive;
 	}
 
 	/* Desktop Navigation */
@@ -180,7 +191,7 @@
 	}
 
 	.mobile-nav.open {
-		max-height: 300px;
+		max-height: 320px;
 		padding: 1rem 2rem 2rem;
 	}
 

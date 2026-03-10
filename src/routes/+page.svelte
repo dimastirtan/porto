@@ -40,6 +40,16 @@
 
 <SectionWrapper title="FAQ" id="faqs">
     <div class="faq-content">
+		<div class="layout">
+			<div>
+				<h3>Kerja apa mas?</h3>
+				<p>nganggur.</p>
+			</div>
+			<div>
+				<h3>Lagi ngerjain apa?</h3>
+				<p>ga ngerjain apa apa.</p>
+			</div>
+		</div>
         <p>Have a question? Send me a message <a href="#contact">here</a>!</p>
     </div>
 </SectionWrapper>
@@ -102,9 +112,28 @@
 	}
 
     .faq-content {
-        text-align: center;
+        text-align: left;
         padding: 2rem 0;
     }
+
+	.layout {
+		display: grid;
+		grid-template-columns: 1fr 1fr;
+		row-gap: 2rem;
+		column-gap: 2rem;
+		padding: 2rem;
+		width: 100%;
+		background: #f3f4f6;
+		border-radius: 12px;
+		margin-bottom: 1rem;
+	}
+
+	.layout h3 {
+		font-size: 1.25rem;
+		font-weight: 600;
+		color: #1f2937;
+		margin-bottom: 0.5rem;
+	}
 
     .tellonym-btn {
 		grid-column: span 2;
@@ -131,6 +160,9 @@
         .tellonym-btn {
             width: 100%;
         }
+		.layout{
+			grid-template-columns: auto;
+		}
     }
 </style>
 

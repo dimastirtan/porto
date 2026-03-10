@@ -30,7 +30,7 @@
 		justify-content: center;
 		text-align: center;
 		padding: 2rem;
-		background: linear-gradient(120deg, #FF5A5A 0%, #FFD45A 100%);
+		background: linear-gradient(135deg, #DDAED3 0%, #6594B1 100%);
 	}
 
 	.hero-content {
@@ -40,14 +40,14 @@
 	.name {
 		font-size: 3.5rem;
 		font-weight: 800;
-		color: #333;
+		color: #213C51;
 		margin-bottom: 1rem;
 		letter-spacing: -0.02em;
 	}
 
 	.tagline {
 		font-size: 1.5rem;
-		color: #333;
+		color: #213C51;
 		margin-bottom: 2rem;
 		line-height: 1.6;
 	}
@@ -71,27 +71,27 @@
 	}
 
 	.btn-primary {
-		background: #FFF2D0;
-		color: #333;
-		border: 2px solid #FFF2D0;
+		background: #EEEEEE;
+		color: #213C51;
+		border: 2px solid #EEEEEE;
 	}
 
 	.btn-primary:hover {
-		background: #FFF2D0;
-		border-color: #E36A6A;
+		background: #EEEEEE;
+		border-color: #213C51;
 		transform: translateY(-2px);
 		box-shadow: 0 4px 12px rgba(37, 99, 235, 0.3);
 	}
 
 	.btn-outline {
 		background: transparent;
-		color: #FFF2D0;
-		border: 2px solid #FFF2D0;
+		color: #EEEEEE;
+		border: 2px solid #EEEEEE;
 	}
 
 	.btn-outline:hover {
-		background: #E36A6A;
-		color: white;
+		background: #213C51;
+		color: #EEEEEE;
 		transform: translateY(-2px);
 	}
 
