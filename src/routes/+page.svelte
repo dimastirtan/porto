@@ -4,6 +4,35 @@
 	import Header from '$lib/components/Header.svelte';
 	import Projects from '$lib/components/Projects.svelte';
 	import Footer from '$lib/components/Footer.svelte';
+
+	let projects = $state([
+		{
+			title: 'PDAM Lending App',
+			description: 'Web-based vehicle lending application for PDAM Tirta Raharja',
+			imageUrl: 'https://fergief.vercel.app/_next/image?url=%2Fpdam.png&w=640&q=75'
+		},
+		{
+			title: 'SPBU Management System',
+			description: 'A web-based attendance management system for SPBU Pertamina in 8 spots',
+			imageUrl: 'https://fergief.vercel.app/_next/image?url=%2Fspbu.png&w=640&q=75'
+		},
+		{
+			title: 'Rich Music',
+			description: 'A web-based music article platform by Rich Music',
+			imageUrl: 'https://fergief.vercel.app/_next/image?url=%2Frichmusic.png&w=640&q=75'
+		}
+	]);
+
+	let faqs = $state([
+		{
+			question: 'What services do you offer?',
+			answer: 'I specialize in full-stack web development, including SvelteKit, React, Node.js, and modern UI/UX design.'
+		},
+		{
+			question: 'How can we get started?',
+			answer: 'Send me a message via WhatsApp, email, or social media to discuss your project requirements and timeline.'
+		}
+	]);
 </script>
 
 <Header 
@@ -11,57 +40,47 @@
 	shortDescription="Tech Enthusiast and Developer"
 />
 
-<SectionWrapper title="About Me" id="about">
+<SectionWrapper title="Greetings" id="about">
 	<About 
-		title="About Me" 
-		description="Person who interest in techs."
+		title="Hai, Saya Dimas Tirta Nugraha" 
+		description="Selamat datang, di website ini kamu bisa mendapat informasi tentang saya, dan beberapa dokumentasi proyek yang telah saya kerjakan, jika ingin menghubungi saya, silahkan menuju ke section 'Contact'"
 	/>
 </SectionWrapper>
 
 <SectionWrapper title="Projects" id="projects" variant="alt">
 	<div class="projects-grid">
-		<Projects 
-			title="PDAM Lending App"
-			description="Web-based vehicle lending application for PDAM Tirta Raharja"
-			imageUrl="https://fergief.vercel.app/_next/image?url=%2Fpdam.png&w=640&q=75"
-		/>
-		<Projects 
-			title="SPBU Management System"
-			description="A web-based attendance management system for SPBU Pertamina in 8 spots"
-			imageUrl="https://fergief.vercel.app/_next/image?url=%2Fspbu.png&w=640&q=75"
-		/>
-		<Projects 
-			title="Rich Music"
-			description="A web-based music article platform by Rich Music"
-			imageUrl="https://fergief.vercel.app/_next/image?url=%2Frichmusic.png&w=640&q=75"
-		/>
+		{#each projects as project}
+			<Projects 
+				title={project.title}
+				description={project.description}
+				imageUrl={project.imageUrl}
+			/>
+		{/each}
 	</div>
 </SectionWrapper>
 
 <SectionWrapper title="FAQ" id="faqs">
     <div class="faq-content">
 		<div class="layout">
-			<div>
-				<h3>Kerja apa mas?</h3>
-				<p>nganggur.</p>
-			</div>
-			<div>
-				<h3>Lagi ngerjain apa?</h3>
-				<p>ga ngerjain apa apa.</p>
-			</div>
+			{#each faqs as faq}
+				<div>
+					<h3>{faq.question}</h3>
+					<p>{faq.answer}</p>
+				</div>
+			{/each}
 		</div>
         <p>Have a question? Send me a message <a href="#contact">here</a>!</p>
     </div>
 </SectionWrapper>
 
 <SectionWrapper title="Contact" id="contact">
-	<p style="text-align: center;">Feel free to reach out or just a friendly chat!</p>
+	<p class="contact-intro">Feel free to reach out or just a friendly chat!</p>
 	<div class="contact-content">
-		<a href="https://ig.me/m/dimastirtan" target="_blank" class="contact-btn">Instagram</a>
-        <a href="https://m.me/iyaasd" target="_blank" class="contact-btn">Facebook</a>
-        <a href="https://wa.me/+6281297514895" target="_blank" class="contact-btn">WhatsApp</a>
-		<a href="http://t.me/dimastirtan" target="_blank" class="contact-btn">Telegram</a>
-		<p style="grid-column: span 2;">OR</p>
+		<a href="https://ig.me/m/dimastirtan" target="_blank" class="contact-btn" rel="noopener noreferrer">Instagram</a>
+        <a href="https://m.me/iyaasd" target="_blank" class="contact-btn" rel="noopener noreferrer">Facebook</a>
+        <a href="https://wa.me/+6281297514895" target="_blank" class="contact-btn" rel="noopener noreferrer">WhatsApp</a>
+		<a href="http://t.me/dimastirtan" target="_blank" class="contact-btn" rel="noopener noreferrer">Telegram</a>
+		<p>OR</p>
 		<a href="https://tellonym.me/user.14071660" target="_blank" rel="noopener noreferrer" class="tellonym-btn">Ask Anonymously via Tellonym</a>
 	</div>
 </SectionWrapper>
@@ -72,9 +91,11 @@
 		<div class="social-links">
 			<a href="https://www.instagram.com/dimastirtan" target="_blank" rel="noopener noreferrer" class="social-link">Instagram</a>
 			<a href="https://www.facebook.com/dimastirtan" target="_blank" rel="noopener noreferrer" class="social-link">Facebook</a>
+			<a href="https://wa.me/+6281297514895" target="_blank" class="social-link" rel="noopener noreferrer">WhatsApp</a>
+			<a href="http://t.me/dimastirtan" target="_blank" class="social-link" rel="noopener noreferrer">Telegram</a>
 		</div>
 	</div>
-	</Footer>
+</Footer>
 
 <style>
 	.projects-grid {
@@ -86,14 +107,24 @@
 
 	.contact-content {
 		text-align: center;
-		padding: 2rem 0;
 		display: grid;
 		grid-template-columns: auto auto;
 		gap: 5px;
+		justify-content: center;
+	}
+
+	.contact-content p {
+		text-align: center;
+	}
+
+	.contact-intro {
+		text-align: center;
+		margin-bottom: 1rem;
 	}
 
 	.contact-content p {
 		color: #555;
+		justify-content: center;
 	}
 
 	.contact-btn {
@@ -113,7 +144,6 @@
 
     .faq-content {
         text-align: left;
-        padding: 2rem 0;
     }
 
 	.layout {

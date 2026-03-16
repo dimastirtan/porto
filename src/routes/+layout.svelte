@@ -23,12 +23,12 @@
 <div class="page-wrapper">
 	<header class="navbar">
 		<div class="nav-container">
-			<a href="/" class="logo" onclick={closeMenu}><img src={logo} alt="Logo" /><span><i>imas</i></span></a>
+			<a href="/" class="logo" onclick={closeMenu}><img src={logo} alt="Dimas Tirta Nugraha portfolio logo" width="32" height="32" /><span><i>imas</i></span></a>
 			
 			<!-- Desktop Navigation -->
 			<nav class="desktop-nav">
 				<a href="#home">Home</a>
-				<a href="#about">About</a>
+				<a href="#about">Greetings</a>
 				<a href="#projects">Projects</a>
 				<a href="#faqs">FAQs</a>
 				<a href="#contact">Contact</a>
